@@ -19,7 +19,7 @@ void times_table(void)
 			}
 			else if (num * num2 != 0 || num2 != 0)
 				_putchar(' ');
-			res = (num * num2) % 10
+			res = (num * num2) % 10;
 			_putchar('0' + res);
 			if (num2 < 9)
 			{
