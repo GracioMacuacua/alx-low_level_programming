@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * jack_bauer - Prints every minute of the day of Jack Bauer😂
+ * jack_bauer - Prints every minute of the day of Jack Bauer
  */
 void jack_bauer(void)
 {
@@ -20,9 +20,7 @@ void jack_bauer(void)
 			_putchar(':');
 			_putchar('0' + minute / 10);
 			_putchar('0' + minute % 10);
-
-			if (!(hour == 23 && minute == 59))
-				_putchar(10);
+			_putchar(10);
 		}
 	}
 }
