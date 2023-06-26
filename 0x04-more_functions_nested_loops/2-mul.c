@@ -2,8 +2,8 @@
 
 /**
 * mul - multiplay to numbers
-* @a: is the number to be multiplayed
-* @b: is the number to be multiplayed
+* @a: is the number to be multiplied
+* @b: is the number to be multiplied
 * Return: the multiplication a and b
 */
 
