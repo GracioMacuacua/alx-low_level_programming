@@ -1,45 +1,47 @@
 #include <stdio.h>
+
 /**
-  * main -A program that print the first 98 fibonacci numbers.
-  * Return: Nothing.
-  */
+ * main - fibonacci <3
+ *
+ * Purpose - no hardcode
+ *
+ * Return:  (Success)
+ */
+
 int main(void)
 {
-	int fibonacci;
-	unsigned long num1, num2, num3;
-	unsigned long m, n, p, carry;
+	unsigned long int i;
+	unsigned long int bef = 1;
+	unsigned long int aft = 2;
+	unsigned long int l = 1000000000;
+	unsigned long int bef1;
+	unsigned long int bef2;
+	unsigned long int aft1;
+	unsigned long int aft2;
 
-	fibonacci = 0;
-	num1 = 0;
-	num2 = 1;
-	for (fibonacci = 1; fibonacci <= 91; fibonacci++)
+	printf("%lu", bef);
+
+	for (i = 1; i < 91; i++)
 	{
-		num3 = num1 + num2;
-		num1 = num2;
-		num2 = num3;
-		printf("%lu, ", num3);
+		printf(", %lu", aft);
+		aft += bef;
+		bef = aft - bef;
 	}
-	m = num1 % 1000;
-	num1 = num1 / 1000;
-	n = num2 % 1000;
-	num2 = num2 / 1000;
-	while (fibonacci <= 98)
+
+	bef1 = (bef / l);
+	bef2 = (bef % l);
+	aft1 = (aft / l);
+	aft2 = (aft % l);
+
+	for (i = 92; i < 99; ++i)
 	{
-		carry = (m + n) / 1000;
-		p = (m + n) - carry * 1000;
-		num3 = (num1 + num2) + carry;
-		m = n;
-		n = p;
-		num1 = num2;
-		num2 = num3;
-		if (p >= 100)
-			printf("%lu%lu", num3, p);
-		else
-			printf("%lu0%lu", num3, p);
-		if (fibonacci != 98)
-			printf(", ");
-		fibonacci++;
+		printf(", %lu", aft1 + (aft2 / l));
+		printf("%lu", aft2 % l);
+		aft1 = aft1 + bef1;
+		bef1 = aft1 - bef1;
+		aft2 = aft2 + bef2;
+		bef2 = aft2 - bef2;
 	}
-	putchar('\n');
+	printf("\n");
 	return (0);
 }
