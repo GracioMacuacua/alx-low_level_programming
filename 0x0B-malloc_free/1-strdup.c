@@ -10,31 +10,31 @@
  */
 char *_strdup(char *str)
 {
-    char *ptr;
-    int size, i;
+	char *ptr;
+	int size, i;
 
-    if (str == NULL)
-        return (NULL);
+	if (str == NULL)
+		return (NULL);
 
-    i = 0, size = 0;
+	i = 0, size = 0;
 
-    for (; *(str + size) != '\0'; size++)
-        ;
+	for (; *(str + size) != '\0'; size++)
+		;
 
-    ptr = (char *)malloc(sizeof(char) * size);
+	ptr = (char *)malloc(sizeof(char) * (size + 1));
 
-    if (ptr == NULL)
-    {
-        return (NULL);
-    }
+	if (ptr == NULL)
+	{
+		return (NULL);
+	}
 
-    while (i < size)
-    {
-        *(ptr + i) = *(str + i);
-        i++;
-    }
+	while (i < size)
+	{
+		*(ptr + i) = *(str + i);
+		i++;
+	}
 
-    *(ptr + i) = '\0';
+	*(ptr + i) = '\0';
 
-    return (ptr);
+	return (ptr);
 }
